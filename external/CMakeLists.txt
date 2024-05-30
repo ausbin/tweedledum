@@ -1,5 +1,9 @@
 # Distributed under the MIT License (See accompanying file /LICENSE)
 
+if (NOT TARGET fmt)
+  add_subdirectory(fmt EXCLUDE_FROM_ALL)
+endif()
+
 if (NOT TARGET abcresub)
   add_library(abcresub INTERFACE)
   target_include_directories(abcresub INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/abcresub)
@@ -49,7 +53,7 @@ endif()
 if (NOT TARGET lorina)
   add_library(lorina INTERFACE)
   target_include_directories(lorina SYSTEM INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/lorina)
-  target_link_libraries(lorina INTERFACE rang fmt::fmt-header-only )
+  target_link_libraries(lorina INTERFACE rang fmt::fmt)
 endif()
 
 # percy master branch: Nov.2020

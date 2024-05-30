@@ -1,3 +1,17 @@
+This is the Qwerty fork of Tweedledum.
+
+Incompatible changes for Qwerty:
+1. To get a Release build to work on aarch64 Macs, [the `{fmt}` library][1] is
+   built differently than upstream Tweedledum. We do _not_ built `{fmt}` as
+   header only. Instead, **consumers of this fork are required to link with both
+   `libtweedledum.a` and `libfmt.a`.**
+
+The original README follows.
+
+[1]: https://github.com/fmtlib/fmt
+
+------
+
 <p align="center">
   <img src="https://cdn.rawgit.com/boschmitt/tweedledum/master/tweedledum.svg" width="128" height="128" style="margin-right: 12pt"/>
 </p>

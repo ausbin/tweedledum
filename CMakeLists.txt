@@ -32,7 +32,6 @@ endif()
 # =============================================================================
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 find_package(Eigen3 3.3 REQUIRED)
-find_package(fmt 8.1.1 REQUIRED)
 find_package(nlohmann_json 3.9.0 REQUIRED)
 find_package(phmap 1.0.0 REQUIRED)
 add_subdirectory(external)
@@ -44,7 +43,7 @@ if(TWEEDLEDUM_PYBINDS AND TWEEDLEDUM_MASTER_PROJECT)
     target_include_directories(_tweedledum PRIVATE ${PROJECT_SOURCE_DIR}/include)
     target_link_libraries(_tweedledum PRIVATE
         Eigen3::Eigen3
-        fmt::fmt-header-only
+        fmt::fmt
         mockturtle
         $<$<CXX_COMPILER_ID:GNU>:stdc++fs>)
     target_compile_options(_tweedledum PRIVATE
@@ -67,7 +66,7 @@ target_include_directories(tweedledum ${tweedledum_system} PUBLIC
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(tweedledum PUBLIC
     Eigen3::Eigen3
-    fmt::fmt-header-only
+    fmt::fmt
     mockturtle
     nlohmann_json
     $<$<CXX_COMPILER_ID:GNU>:stdc++fs>)

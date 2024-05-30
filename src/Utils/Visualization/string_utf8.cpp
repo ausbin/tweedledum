@@ -11,6 +11,7 @@
 #include <fmt/format.h>
 #include <fmt/xchar.h>
 #include <limits>
+#include <locale>
 #include <utility>
 
 namespace tweedledum {
